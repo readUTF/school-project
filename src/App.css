@@ -1,38 +1,277 @@
-.App {
-  text-align: center;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+input,
+button {
+  appearance: none;
+  background: none;
+  border: none;
+  outline: none;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.sidebar {
+  padding-left: 20px;
+  height: 50vh;
+  width: 10vw;
+  background-color: rgb(255, 255, 255);
+  position: fixed !important;
+  z-index: 1;
+  overflow: hidden;
+  border: 1px solid #4a00e0;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.card-form {
+    width: 90%
+}
+
+.set-editor .card-input {
+  padding: 14px 32px 14px 14px;
+  margin-left: 12px;
+  background-color: #5d0cff;
+  outline: none;
+  width: 170px;
+  background: transparent;
+  color: #fff;
+}
+
+.delete-icon {
+  margin-right: 5px;
+  color: #fff;
+}
+
+.edit-icon {
+  color: #fff;
+  cursor: pointer;
+}
+
+.card-input {
+  border: 2px solid #149fff;
+}
+
+.card-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 4px auto;
+  color: #fff;
+  background: linear-gradient(
+    90deg,
+    rgba(255, 118, 20, 1) 0%,
+    rgba(255, 84, 17, 1) 100%
+  );
+
+  padding: 16px;
+  border-radius: 5px;
+  width: 90%;
+}
+
+.card-name-input {
+    padding: 14px 32px 14px 14px;
+    margin-left: 12px;
+    background-color: #5d0cff;
+    outline: none;
+    width: 170px;
+    background: transparent;
+    color: #fff;
+}
+
+.icons {
+    display: inline-block;
+    justify-content: center;
+    align-items: center;
+    height: 30px
+}
+
+.card-button {
+  padding: 16px;
+  border: none;
+  border-radius: 0 4px 4px 0;
+  cursor: pointer;
+  outline: none;
+  background: linear-gradient(
+    90deg,
+    rgba(93, 12, 255, 1) 0%,
+    rgba(155, 0, 250, 1) 100%
+  );
+  color: #fff;
+  text-transform: capitalize;
+}
+
+
+
+.sidebar h1 {
+  margin: 32px 0;
+  color: rgb(0, 0, 0);
+  font-size: 24px;
+  text-decoration: underline;
+}
+
+.create-button {
+    color: white;
+    margin-top: 5px;
+    padding: 5px 5px 5px 5px;
+    border-radius: 5px;
+    background: linear-gradient(
+    90deg,
+    rgba(93, 12, 255, 1) 0%,
+    rgba(155, 0, 250, 1) 100%
+  );
+}
+
+.no-set {
+    color: white;
+    padding-top: 30%;
+    justify-content: center;
+    align-items: center;
+    font-size: xx-large;
+}
+
+.sidebar .button {
+  padding: 5px 2px 2px 5px;
+  margin: 5px 5px 5px 5px;
+  border: 1px solid white;
+  border-radius: 5px;
+  background-color: #5d0cff;
+  color: white;
+
+}
+
+
+
+.sidebar .button:hover {
+  padding: 5px 2px 2px 5px;
+  margin: 5px 5px 5px 5px;
+  outline: rgb(0, 0, 0) solid 1px;
+}
+
+.todolist {
   display: flex;
   flex-direction: column;
+  justify-content: start;
+  width: 520px;
+  min-height: 600px;
+  background: #161a2b;
+  text-align: center;
+  margin: 128px auto;
+  border-radius: 10px;
+  padding-bottom: 32px;
+}
+.todolist h2 {
+  margin: 32px 0;
+  color: #fff;
+  font-size: 24px;
+}
+
+.homepage after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: -5px;
+  left: -5px;
+  right: -5px;
+  bottom: -5px;
+  z-index: 1;
+  background-image: linear-gradient(to bottom right, #8e2de2, #4a00e0);
+}
+
+.login {
+  height: 100vh;
+  display: flex;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  background-color: #181818;
 }
 
-.App-link {
-  color: #61dafb;
+.login form {
+  display: block;
+  position: relative;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.login form:after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: -5px;
+  left: -5px;
+  right: -5px;
+  bottom: -5px;
+  z-index: 1;
+  background-image: linear-gradient(to bottom right, #8e2de2, #4a00e0);
+}
+
+.login form .form-inner {
+  position: relative;
+  display: block;
+  background-color: white;
+  padding: 30px;
+  z-index: 2;
+}
+
+.login form .form-inner h2 {
+  color: #888;
+  font-size: 28px;
+  font-weight: 500;
+  margin-bottom: 30px;
+}
+
+.login form .form-inner .form-group {
+  display: block;
+  width: 300px;
+  margin-bottom: 15px;
+}
+
+.login .form-group label {
+  display: block;
+  color: #666;
+  font-size: 12px;
+  margin-bottom: 5px;
+  transition: 0.4s;
+}
+
+.login .form-group:focus-within label {
+  color: #8e2de2;
+}
+
+.login .form-group input {
+  display: block;
+  width: 100%;
+  padding: 10px 15px;
+  background-color: #f8f8f8;
+  border-radius: 8px;
+  transition: 0.4s;
+}
+
+.login .form-group input:focus {
+  box-shadow: 0px, 0px, 0px rgba(0, 0, 0, 0.2);
+  border: 1px solid #4a00e0;
+  transition: 0.4s;
+}
+
+.login form .form-inner #register {
+  padding-top: 10px;
+}
+
+.login form .form-inner input[type="submit"] {
+  display: inline-block;
+  padding: 7px 15px;
+  margin-left: 5px;
+  border-radius: 8px;
+  border: 3px solid #4a00e0;
+  transition: 0.4s;
+}
+
+.login form .form-inner input[type="submit"]:hover {
+  display: inline-block;
+  border-radius: 8px;
+  background-color: #8e2de2;
+}
+
+.login .error {
+  color: red;
+  padding: 20px 0px 0px 0px;
+  position: relative;
 }
